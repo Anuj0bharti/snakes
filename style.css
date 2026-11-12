@@ -1,0 +1,243 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle, #343b36, #101411);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 12px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.game-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone {
+    width: min(370px, 100%);
+    background: linear-gradient(145deg, #e8e4ce, #b9b69f);
+    border: 5px solid #777866;
+    border-radius: 48px 48px 55px 55px;
+    padding: 24px 22px;
+    box-shadow:
+        12px 15px 30px #0009,
+        inset 3px 3px 8px #ffffffaa,
+        inset -4px -5px 8px #5555;
+    color: #35382e;
+}
+
+.phone-brand {
+    text-align: center;
+    font-weight: 900;
+    font-size: 27px;
+    letter-spacing: 5px;
+    margin-bottom: 3px;
+    color: #31342d;
+}
+
+.phone-model {
+    text-align: center;
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.screen-frame {
+    background: #747e60;
+    border: 5px solid #454b3c;
+    border-radius: 12px;
+    padding: 9px;
+    box-shadow: inset 0 0 10px #0009;
+}
+
+.screen-header,
+.screen-footer,
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    color: #152619;
+    padding: 5px 2px;
+}
+
+.score-board {
+    font-size: 7px;
+    margin-bottom: 5px;
+}
+
+.lcd {
+    background: #9bbc0f;
+    border: 3px solid #35452a;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1;
+    touch-action: none;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    image-rendering: pixelated;
+}
+
+.screen-footer {
+    font-size: 7px;
+    margin-top: 3px;
+}
+
+.soft-keys {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 12px;
+}
+
+.soft-keys button {
+    border: none;
+    background: #55594d;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px #30342d;
+}
+
+.soft-keys button:active,
+.nav-btn:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.nav-middle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-btn {
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    background: linear-gradient(145deg, #55594e, #292d27);
+    box-shadow: 0 5px #191c18;
+    font-size: 19px;
+    font-weight: bold;
+    width: 48px;
+    height: 38px;
+    border-radius: 10px;
+    touch-action: manipulation;
+}
+
+.nav-btn.select {
+    width: 65px;
+    height: 42px;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #929485, #45493e);
+    font-size: 12px;
+}
+
+.keypad {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 25px;
+}
+
+.key-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.key-row button {
+    flex: 1;
+    max-width: 85px;
+    height: 43px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #55594e, #252923);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 4px #171a16;
+    cursor: default;
+}
+
+.key-row small {
+    font-size: 7px;
+    color: #bfc3b5;
+}
+
+.phone-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 23px;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #55594e;
+}
+
+.instructions {
+    text-align: center;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 2;
+    color: #aeb6a8;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 400px) {
+    .phone {
+        padding: 20px 15px;
+        border-radius: 38px;
+    }
+
+    .phone-brand {
+        font-size: 23px;
+    }
+
+    .nav-btn {
+        width: 44px;
+    }
+}
+
+@media (max-height: 750px) and (min-width: 500px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .phone {
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin-bottom: -65px;
+    }
+}
